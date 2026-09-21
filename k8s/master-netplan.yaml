@@ -1,0 +1,22 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s8:
+      dhcp4: no
+      addresses:
+        - 10.0.10.10/24
+    enp0s9:
+      dhcp4: no
+  vlans:  
+    enp0s9.20:
+       id: 20
+       link: enp0s9
+       addresses:
+        - 10.0.20.10/24
+       routes:
+         - to: default
+           via: 10.0.20.1
+       nameservers:
+         addresses:
+            - 8.8.8.8     

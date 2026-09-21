@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'ssh -o StrictHostKeyChecking=no user@10.0.40.10 "cd ~/app && git pull && docker build -t flask-app:${BUILD_NUMBER} . && docker save -o ~/images/flask-app-${BUILD_NUMBER}.tar flask-app:${BUILD_NUMBER} "'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'ssh -o StrictHostKeyChecking=no user@10.0.40.10 "~/deploy.sh ${BUILD_NUMBER}"'
+            }
+        }
+    }
+}
