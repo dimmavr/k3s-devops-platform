@@ -1,8 +1,0 @@
----
-# handlers file for roles/gateway
-#
-#
-- name: restart nft
-  ansible.builtin.service:
-    name: nftables
-    state: restarted

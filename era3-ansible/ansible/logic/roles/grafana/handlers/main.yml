@@ -1,5 +1,0 @@
----
-# handlers file for grafana
-#
-- name: restart grafana
-  ansible.builtin.command: docker restart grafana

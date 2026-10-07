@@ -1,5 +1,0 @@
----
-# handlers file for alermanager
-#
-- name: restart alertmanager
-  ansible.builtin.command: docker restart alertmanager

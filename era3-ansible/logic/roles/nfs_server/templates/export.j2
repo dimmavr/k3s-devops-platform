@@ -1,5 +1,0 @@
-# Managed by Ansible
-{% for export in nfs_exports %}
-{{ export.path }} {% for client in export.clients %}{{ client }}({{ export.options }}) {% endfor %}
-
-{% endfor %}

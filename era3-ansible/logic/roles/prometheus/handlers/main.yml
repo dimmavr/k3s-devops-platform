@@ -1,5 +1,0 @@
----
-# handlers file for prometheus
-#
-- name: restart prometheus
-  ansible.builtin.command: docker restart prometheus
